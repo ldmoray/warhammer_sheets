@@ -1,5 +1,8 @@
 function onOpen() {
-  SpreadsheetApp.getUi().createMenu("Warhammer").addItem("Load Aeldari", "load_aeldari").addToUi();
+  let menu = SpreadsheetApp.getUi().createMenu("Warhammer");
+  menu.addItem("Load Aeldari", "load_aeldari").addToUi();
+  menu.addItem("Load Imperial Knights", "load_imperial_knights").addToUi();
+  menu.addItem("Load Agents of the Imperium", "load_agents").addToUi();
 }
 
 /**
@@ -68,4 +71,12 @@ function loadbscribe(url) {
 
 function load_aeldari(){
   loadbscribe("https://raw.githubusercontent.com/BSData/wh40k-10e/main/Aeldari%20-%20Aeldari%20Library.cat")
+}
+
+function load_imperial_knights(){
+  loadbscribe("https://raw.githubusercontent.com/BSData/wh40k-10e/main/Imperium%20-%20Imperial%20Knights%20-%20Library.cat")
+}
+
+function load_agents() {
+  loadbscribe("https://raw.githubusercontent.com/BSData/wh40k-10e/main/Imperium%20-%20Agents%20of%20the%20Imperium.cat")
 }
